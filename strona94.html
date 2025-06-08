@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Best Rap Albums (90's-20's)</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #121212;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: white;
+        }
+
+        .intro {
+            background-image: url(https://i.imgur.com/hkHIWBy.png);
+            background-size: cover;
+            background-position: center;
+            padding: 300px 300px;
+            text-align: center;
+            position: relative;
+        }
+        .intro::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        .intro-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            color: white;
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        .scroll-down {
+            margin-top: 30px;
+            font-size: 32px;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        .album {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            margin: 30px;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            flex-wrap: wrap;
+        }
+        .album-header {
+            width: 100%;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #fff;
+            user-select: none;
+        }
+        .album img {
+            width: 260px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+            transition: all 0.3s ease;
+        }
+        .album-info {
+            flex: 1;
+            display: none;
+            transition: all 0.3s ease;
+        }
+        .album-info h2 {
+            margin: 0 0 10px;
+            font-size: 24px;
+        }
+        .album-info h3, .album-info h4 {
+            margin: 0;
+            font-weight: normal;
+        }
+        .album-info p {
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+        .spotify-link a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #1DB954;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .spotify-link a:hover {
+            text-decoration: underline;
+        }
+        .album.expanded img {
+            width: 200px;
+        }
+        .album.expanded .album-info {
+            display: block;
+        }
+
+        .illmatic { background-color: #7B4F24; }
+        .dropout { background-color: #ad5824; }
+        .gkmc { background-color: #4b8696; }
+        .alfredo { background-color: #5a3a21; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Best Rap Albums (90's-20's)</h1>
+    </header>
+
+    <section class="intro">
+        <div class="intro-content">
+            <p>Hip-hop to nie tylko muzyka — to język ulicy, pulsujący rytm kultury i głos kolejnych pokoleń. Od surowych bitów i społecznych komentarzy lat 90., przez eksperymentalną duszę przełomu wieków, aż po współczesne, wielowarstwowe narracje i produkcyjne perfekcje – rap zawsze był odbiciem czasów, w których powstawał. W tym zestawieniu cofniemy się w czasie, aby odkryć najważniejsze albumy każdej dekady – płyty, które nie tylko podbiły listy przebojów, ale też zmieniły bieg historii gatunku. To hołd dla klasyków, którzy wytyczali ścieżki, i dla innowatorów, którzy zburzyli stare granice. Sprawdź nasz ranking najlepszych rapowych albumów ostatnich 35 lat – od ,,Illmatic" po ,,Alfredo", od Nasa po Kendricka – oto podróż przez historię rapu.</p>
+            <div class="scroll-down" onclick="toggleAlbums()">▼</div>
+        </div>
+    </section>
+
+    <div id="albums" style="display: none;">
+       <div class="album illmatic" onclick="toggleAlbum(this)">
+        <div class="album-header">1990-1999</div>
+        <img src="https://ecsmedia.pl/c/illmatic-b-iext148215433.jpg" alt="Illmatic Nas">
+        <div class="album-info">
+            <h2>Illmatic</h2>
+            <h3>Nas</h3>
+            <h4>1994</h4>
+            <p>"Illmatic" Nasa to jedno z najbardziej cenionych dzieł w historii hip-hopu – debiut, który mimo początkowo umiarkowanego sukcesu komercyjnego, zyskał status kultowego albumu, uznawanego za ideał lirycznego rapu. Krytycy i słuchacze zgodnie podkreślają jego ponadczasowy charakter, a wpływ tej płyty na kolejne pokolenia artystów jest nie do przecenienia. Produkcja legend takich jak DJ Premier, Pete Rock i Q-Tip idealnie dopełnia poetycką precyzję młodego Nasa. Dziś "Illmatic" to synonim rapowego kanonu i często wymieniany jako najlepszy album hip-hopowy wszech czasów.</p>
+            <div class="spotify-link"><a href="https://open.spotify.com/album/3kEtdS2pH6hKcMU9Wioob1" target="_blank">Posłuchaj Illmatic na Spotify</a></div>
+        </div>
+    </div>
+
+    <div class="album dropout" onclick="toggleAlbum(this)">
+        <div class="album-header">2000-2009</div>
+        <img src="https://m.media-amazon.com/images/I/91CDaas05ZL.jpg" alt="The College Dropout Kanye West">
+        <div class="album-info">
+            <h2>The College Dropout</h2>
+            <h3>Kanye West</h3>
+            <h4>2004</h4>
+            <p>"The College Dropout" Kanye'ego Westa to debiut, który odmienił oblicze rapu, łącząc osobiste teksty, gospelowe wpływy i świeże podejście do produkcji. Album zdobył Grammy za najlepszy album rapowy i był początkiem błyskotliwej kariery Westa jako artysty i producenta. Entuzjastycznie przyjęty przez krytyków i fanów, został uznany za jedno z najważniejszych wydawnictw pierwszej dekady XXI wieku. Dzięki swojej autentyczności i innowacyjności "The College Dropout" otworzył drzwi nowemu pokoleniu raperów niebojących się wrażliwości.</p>
+            <div class="spotify-link"><a href="https://open.spotify.com/album/4Uv86qWpGTxf7fU7lG5X6F" target="_blank">Posłuchaj The College Dropout na Spotify</a></div>
+        </div>
+    </div>
+
+    <div class="album gkmc" onclick="toggleAlbum(this)">
+        <div class="album-header">2010-2019</div>
+        <img src="https://muzikercdn.com/uploads/products/19919/1991923/main_278d6e83.jpg" alt="Good Kid Maad City Kendrick Lamar">
+        <div class="album-info">
+            <h2>good kid, m.A.A.d city (Deluxe)</h2>
+            <h3>Kendrick Lamar</h3>
+            <h4>2012</h4>
+            <p>"good kid, m.A.A.d city (Deluxe)" Kendricka Lamara to wielowarstwowa opowieść o dojrzewaniu w brutalnej rzeczywistości Compton, która zdobyła uznanie zarówno krytyków, jak i publiczności na całym świecie. Album otrzymał wiele nominacji do Grammy i do dziś uważany jest za jedno z najwybitniejszych dzieł konceptualnych w historii gatunku. Kendrick po mistrzowsku łączy storytelling, refleksję społeczną i znakomitą produkcję, tworząc dzieło, które z miejsca stało się klasykiem. "GKMC" ugruntowało jego pozycję jako jednego z najważniejszych głosów współczesnego hip-hopu.</p>
+            <div class="spotify-link"><a href="https://open.spotify.com/album/748dZDqSZy6aPXKcI9H80u?si=kyRTiTTBR8-id1iH43VomQ" target="_blank">Posłuchaj good kid, m.A.A.d city na Spotify</a></div>
+        </div>
+    </div>
+
+    <div class="album alfredo" onclick="toggleAlbum(this)">
+        <div class="album-header">2020-2025</div>
+        <img src="https://ecsmedia.pl/c/alfredo-b-iext78968424.jpg" alt="Alfredo Freddie Gibbs">
+        <div class="album-info">
+            <h2>Alfredo</h2>
+            <h3>Freddie Gibbs & The Alchemist</h3>
+            <h4>2020</h4>
+            <p>"Alfredo" to efekt współpracy Freddiego Gibbsa i The Alchemista, który w 2020 roku zachwycił środowisko muzyczne swoją spójnością, klimatem i liryczną ostrością. Album został nominowany do Grammy w kategorii Best Rap Album i uznany przez wiele redakcji (Pitchfork, Complex, Rolling Stone) za jedno z najlepszych wydawnictw roku. Gibbs błyszczy tu jako techniczny i świadomy raper, a produkcja Alchemista oferuje idealne tło – subtelne, jazzujące beaty z duszą. "Alfredo" to dowód, że do stworzenia nowoczesnego klasyka nie potrzeba przebojów – wystarczy doskonała chemia między dwoma mistrzami rzemiosła.</p>
+            <div class="spotify-link"><a href="https://open.spotify.com/album/3znl1qe13kyjQv7KcR685N?si=NcZucms-RHC1KjZQ4UAoCw" target="_blank">Posłuchaj Alfredo na Spotify</a></div>
+        </div>
+    </div>
+
+    </div>
+
+    <script>
+        function toggleAlbum(element) {
+            element.classList.toggle("expanded");
+        }
+        function toggleAlbums() {
+            const albumSection = document.getElementById("albums");
+            albumSection.style.display = (albumSection.style.display === "none") ? "block" : "none";
+            window.scrollTo({ top: albumSection.offsetTop, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
